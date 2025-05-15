@@ -1,0 +1,160 @@
+/* Базовые настройки */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Orbitron', sans-serif;
+  background-color: #000;
+  color: #eee;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Фоновое изображение */
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('img/my_background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  filter: brightness(0.4);
+  z-index: -1;
+}
+
+/* Кнопка запуска музыки */
+#playButton {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: linear-gradient(to right, #ff00cc, #3333ff);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  text-shadow: 0 0 5px #fff, 0 0 10px #f0f;
+  border-radius: 5px;
+  animation: pulse 2s infinite;
+  z-index: 10;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+/* Заголовок */
+.neon-header {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #0ff;
+  text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0f0;
+}
+
+.neon-header h1 {
+  font-size: 4rem;
+  letter-spacing: 4px;
+  animation: flicker 2s infinite;
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+.neon-header p {
+  font-size: 1.2rem;
+  color: #0f0;
+  text-shadow: 0 0 5px #0f0;
+}
+
+/* Секции контента */
+section {
+  max-width: 800px;
+  margin: auto;
+  padding: 2rem 1rem;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
+h2 {
+  color: #f0f;
+  text-shadow: 0 0 5px #f0f, 0 0 10px #f0f;
+  margin-bottom: 1rem;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul li::before {
+  content: "☢ ";
+  color: red;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+/* Контакты */
+.contact a {
+  color: #0ff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Футер */
+.neon-footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #111;
+  color: #888;
+  border-top: 2px solid #f0f;
+  font-size: 0.9rem;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .neon-header h1 {
+    font-size: 2.5rem;
+  }
+
+  .neon-header p {
+    font-size: 1rem;
+  }
+
+  section {
+    padding: 1.5rem 0.5rem;
+  }
+
+  #playButton {
+    top: 10px;
+    right: 10px;
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .neon-header h1 {
+    font-size: 2rem;
+  }
+
+  section {
+    padding: 1rem 0.5rem;
+  }
+
+  ul li::before {
+    content: "☢ ";
+    font-size: 0.9rem;
+  }
+}
